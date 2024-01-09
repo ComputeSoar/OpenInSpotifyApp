@@ -4,8 +4,9 @@ Redirects Spotify links to automatically open in the desktop app when clicked.
 
 ## Installation
 
-1. Run `Install.bat` to set up the necessary registry entries.
-2. Install the extension that should automatically be prompted to install after running `Install.bat`.
+1. Extract the contents of `OpenInSpotifyApp.zip`
+2. Run `Install.bat` to set up the necessary registry entries
+3. Install the extension that should automatically be prompted to install after running `Install.bat`
 
 **Note:** Before running scripts or installing browser extensions from external sources, be cautious and ensure that they come from trustworthy and reliable sources to avoid potential security risks.
 
