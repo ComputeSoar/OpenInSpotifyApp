@@ -25,7 +25,7 @@ REM Navigate to the "bin" directory
 cd "%~dp0bin"
 
 REM Open about:debugging#/runtime/this-firefox in default browser
-start firefox about:debugging#/runtime/this-firefox
+start firefox https://addons.mozilla.org/firefox/downloads/file/4219402/dd19f06cb57f46658b85-1.0.xpi
 
 REM Wait for 2 seconds to allow Firefox to open
 timeout /t 2 /nobreak >nul
@@ -33,15 +33,12 @@ timeout /t 2 /nobreak >nul
 REM Check if Firefox is running, if not, try Waterfox
 tasklist /FI "IMAGENAME eq firefox.exe" 2>NUL | find /I /N "firefox.exe" >NUL
 if "%ERRORLEVEL%"=="0" (
-    REM Firefox is running, open extension folder in Windows Explorer
-    start explorer %cd%\extension
+    REM Firefox is running
 ) else (
     REM Suppress error messages and try opening URLs in Waterfox
     2>NUL timeout /t 2 /nobreak >nul
-    2>NUL start waterfox about:debugging#/runtime/this-firefox
+    2>NUL start waterfox https://addons.mozilla.org/firefox/downloads/file/4219402/dd19f06cb57f46658b85-1.0.xpi
     timeout /t 2 /nobreak >nul
-    REM Open extension folder in Windows Explorer
-    start explorer %cd%\extension
 )
 
 REM Display a message
