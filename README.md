@@ -5,7 +5,7 @@ Redirects Spotify links to automatically open in the desktop app when clicked.
 ## Installation
 
 1. Run `Install.bat` to set up the necessary registry entries.
-2. Load the extension by selecting "Load Temporary Add-On..." on the page that has opened in your browser. (If this page does not load, navigate to: `about:debugging#/runtime/this-firefox`.)
+2. Load the extension by selecting "Load Temporary Add-On..." on the page that has opened in your browser. If this page does not load, navigate to: `about:debugging#/runtime/this-firefox`.
 3. The `extension` folder should have been automatically opened upon running `Install.bat`, load the `manifest.json` file as a Temporary Add-On.
 
 **Note:** Before running scripts or installing browser extensions from external sources, be cautious and ensure that they come from trustworthy and reliable sources to avoid potential security risks.
