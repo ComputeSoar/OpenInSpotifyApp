@@ -1,0 +1,13 @@
+Windows Registry Editor Version 5.00
+
+[-HKEY_CLASSES_ROOT\spotify]
+[-HKEY_CLASSES_ROOT\spotify\DefaultIcon]
+[-HKEY_CLASSES_ROOT\spotify\shell]
+[-HKEY_CLASSES_ROOT\spotify\shell\open]
+[-HKEY_CLASSES_ROOT\spotify\shell\open\command]
+
+[-HKEY_CURRENT_USER\Software\Classes\spotify]
+[-HKEY_CURRENT_USER\Software\Classes\spotify\DefaultIcon]
+[-HKEY_CURRENT_USER\Software\Classes\spotify\shell]
+[-HKEY_CURRENT_USER\Software\Classes\spotify\shell\open]
+[-HKEY_CURRENT_USER\Software\Classes\spotify\shell\open\command]
