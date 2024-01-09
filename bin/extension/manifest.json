@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Spotify Link Handler",
+    "version": "1.0",
+    "description": "Handle Spotify links and redirect to the Spotify app",
+    "permissions": ["activeTab"],
+    "content_scripts": [
+      {
+        "matches": ["*://open.spotify.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  

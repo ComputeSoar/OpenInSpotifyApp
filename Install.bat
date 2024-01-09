@@ -24,11 +24,28 @@ if /i "%confirmation%" neq "Y" (
 REM Navigate to the "bin" directory
 cd "%~dp0bin"
 
-REM Run the RunFindSpotifyPathAndCreateReg.bat script
-call RunFindSpotifyPathAndCreateReg.bat
+REM Open about:debugging#/runtime/this-firefox in default browser
+start firefox about:debugging#/runtime/this-firefox
 
-REM Run the InstallSpotifyProtocolHandler.bat script
-call InstallSpotifyProtocolHandler.bat
+REM Wait for 2 seconds to allow Firefox to open
+timeout /t 2 /nobreak >nul
+
+REM Check if Firefox is running, if not, try Waterfox
+tasklist /FI "IMAGENAME eq firefox.exe" 2>NUL | find /I /N "firefox.exe" >NUL
+if "%ERRORLEVEL%"=="0" (
+    REM Firefox is running, open extension folder in Windows Explorer
+    start explorer %cd%\extension
+) else (
+    REM Suppress error messages and try opening URLs in Waterfox
+    2>NUL timeout /t 2 /nobreak >nul
+    2>NUL start waterfox about:debugging#/runtime/this-firefox
+    timeout /t 2 /nobreak >nul
+    REM Open extension folder in Windows Explorer
+    start explorer %cd%\extension
+)
+
+REM Display a message
+echo Please load the extension in your browser. Once done, press any key to exit...
 
 REM Pause to view any error messages
 pause > nul
